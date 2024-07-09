@@ -665,16 +665,27 @@ function OrionLib:MakeWindow(WindowConfig)
 	end)
 
     -- Create a ScreenGui for the toggle button
-    local ScreenGui = Instance.new("ScreenGui")
-    local ToggleButton = Instance.new("TextButton")
+	local ScreenGui = Instance.new("ScreenGui")
+	local ToggleButton = Instance.new("TextButton")
+	local UICorner = Instance.new("UICorner")
 
-    ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-    ToggleButton.Parent = ScreenGui
+	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	ToggleButton.Parent = ScreenGui
 
-    ToggleButton.Size = UDim2.new(0, 100, 0, 50)
-    ToggleButton.Position = UDim2.new(0.5, -50, 0, 10)
-    ToggleButton.Text = "Toggle Window"
-    ToggleButton.TextScaled = true
+	-- Set size, position, and appearance
+	ToggleButton.Size = UDim2.new(0, 60, 0, 60)
+	ToggleButton.Position = UDim2.new(0.5, -30, 0, 10)
+	ToggleButton.Text = "Toggle"
+	ToggleButton.TextScaled = true
+	ToggleButton.Draggable = true
+	ToggleButton.Active = true
+	ToggleButton.BackgroundColor3 = Color3.fromRGB(70, 130, 180) -- Steel blue color
+	ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+
+	-- Make the button circular
+	UICorner.Parent = ToggleButton
+	UICorner.CornerRadius = UDim.new(0.5, 0)
+
 
     ToggleButton.MouseButton1Click:Connect(function()
         if UIHidden then
