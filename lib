@@ -676,7 +676,7 @@ function OrionLib:MakeWindow(WindowConfig)
 	ToggleButton.Size = UDim2.new(0, 65, 0, 21)
 	ToggleButton.Position = UDim2.new(0.456, 0, 0, 0)
 	ToggleButton.Text = "Open"
-	ToggleButton.TextColor3 = 255, 255, 255
+	ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 	ToggleButton.Draggable = true
 	ToggleButton.Active = true
 	ToggleButton.BackgroundColor3 = Color3.fromRGB(59, 59, 59) -- Darker background color
