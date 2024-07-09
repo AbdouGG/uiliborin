@@ -668,28 +668,23 @@ function OrionLib:MakeWindow(WindowConfig)
 	local ScreenGui = Instance.new("ScreenGui")
 	local ToggleButton = Instance.new("TextButton")
 	local UICorner = Instance.new("UICorner")
-	local ImageLabel = Instance.new("ImageLabel")
 
 	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 	ToggleButton.Parent = ScreenGui
 
 	-- Set size, position, and appearance
-	ToggleButton.Size = UDim2.new(0, 60, 0, 60)
-	ToggleButton.Position = UDim2.new(0.5, -30, 0, 10)
-	ToggleButton.Text = ""
+	ToggleButton.Size = UDim2.new(0, 65, 0, 21)
+	ToggleButton.Position = UDim2.new(0.456, 0, 0, 0)
+	ToggleButton.Text = "Open"
+	ToggleButton.TextColor3 = 255, 255, 255
 	ToggleButton.Draggable = true
 	ToggleButton.Active = true
-	ToggleButton.BackgroundColor3 = Color3.fromRGB(62, 88, 99) -- Darker background color
-
-	-- Add an icon to the button
-	ImageLabel.Parent = ToggleButton
-	ImageLabel.Size = UDim2.new(0.8, 0, 0.8, 0)
-	ImageLabel.Position = UDim2.new(0.1, 0, 0.1, 0)
-	ImageLabel.Image = "rbxassetid://<YourImageAssetIdHere>" -- Replace with the asset ID of your icon
+	ToggleButton.BackgroundColor3 = Color3.fromRGB(59, 59, 59) -- Darker background color
+	ToggleButton.Transparency = 0.4
 
 	-- Make the button circular
 	UICorner.Parent = ToggleButton
-	UICorner.CornerRadius = UDim.new(0.5, 0)
+	UICorner.CornerRadius = UDim.new(0, 10)
 
 
 
