@@ -674,14 +674,14 @@ function OrionLib:MakeWindow(WindowConfig)
 
 	-- Set size, position, and appearance
 	ToggleButton.Size = UDim2.new(0, 65, 0, 21)
-	ToggleButton.Position = UDim2.new(0.456, 0, 0, 0)
+	ToggleButton.Position = UDim2.new(0.5, 0, 0, 0)
 	ToggleButton.Text = "Close"
 	ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 	ToggleButton.Draggable = true
 	ToggleButton.Active = true
 	ToggleButton.BackgroundColor3 = Color3.fromRGB(59, 59, 59) -- Darker background color
 	ToggleButton.Transparency = 0.4
-	ToggleButton.ZIndex = 999999999
+	ToggleButton.ZIndex = 1
 
 	-- Make the button circular
 	UICorner.Parent = ToggleButton
