@@ -675,7 +675,7 @@ function OrionLib:MakeWindow(WindowConfig)
 	-- Set size, position, and appearance
 	ToggleButton.Size = UDim2.new(0, 65, 0, 21)
 	ToggleButton.Position = UDim2.new(0.5, 0, 0, 0)
-	ToggleButton.Text = "Close"
+	ToggleButton.Text = "Ui is opend"
 	ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 	ToggleButton.Draggable = true
 	ToggleButton.Active = true
@@ -691,10 +691,10 @@ function OrionLib:MakeWindow(WindowConfig)
 
     ToggleButton.MouseButton1Click:Connect(function()
         if UIHidden then
-			ToggleButton.Text = "Open"
+			ToggleButton.Text = "Ui is opend"
             MainWindow.Visible = true
         else
-			ToggleButton.Text = "Close"
+			ToggleButton.Text = "Ui is closed"
             MainWindow.Visible = false
         end
         UIHidden = not UIHidden
