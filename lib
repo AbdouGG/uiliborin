@@ -691,10 +691,10 @@ function OrionLib:MakeWindow(WindowConfig)
 
     ToggleButton.MouseButton1Click:Connect(function()
         if UIHidden then
-			ToggleButton.Text = "Close"
+			ToggleButton.Text = "Open"
             MainWindow.Visible = true
         else
-			ToggleButton.Text = "Open"
+			ToggleButton.Text = "Close"
             MainWindow.Visible = false
         end
         UIHidden = not UIHidden
