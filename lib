@@ -647,9 +647,15 @@ function OrionLib:MakeWindow(WindowConfig)
 
 	MakeDraggable(DragPoint, MainWindow)
 
+	-- Create a ScreenGui for the toggle button
+	local ScreenGui = Instance.new("ScreenGui")
+	local ToggleButton = Instance.new("TextButton")
+	local UICorner = Instance.new("UICorner")
+
 	AddConnection(CloseBtn.MouseButton1Up, function()
 		MainWindow.Visible = false
 		UIHidden = true
+		ToggleButton.Text = "Ui is closed"
 		OrionLib:MakeNotification({
 			Name = "Interface Hidden",
 			Content = "Tap RightShift to reopen the interface",
@@ -664,10 +670,7 @@ function OrionLib:MakeWindow(WindowConfig)
 		end
 	end)
 
-    -- Create a ScreenGui for the toggle button
-	local ScreenGui = Instance.new("ScreenGui")
-	local ToggleButton = Instance.new("TextButton")
-	local UICorner = Instance.new("UICorner")
+    
 
 	ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 	ToggleButton.Parent = ScreenGui
