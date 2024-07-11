@@ -676,7 +676,7 @@ function OrionLib:MakeWindow(WindowConfig)
 	ToggleButton.Parent = ScreenGui
 
 	-- Set size, position, and appearance
-	ToggleButton.Size = UDim2.new(0, 65, 0, 21)
+	ToggleButton.Size = UDim2.new(0, 5, 0, 30)
 	ToggleButton.Position = UDim2.new(0.7, 0, 0, 0)
 	ToggleButton.Text = "Ui is opend"
 	ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
