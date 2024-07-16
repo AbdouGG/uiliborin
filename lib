@@ -1061,7 +1061,7 @@ function OrionLib:MakeWindow(WindowConfig)
 					}), "Text")
 				})
 
-				local SliderBar = SetChildren(SetProps(MakeElement("TextButton", SliderConfig.Color, 0, 5), {
+				local SliderBar = SetChildren(SetProps(MakeElement("RoundFrame", SliderConfig.Color, 0, 5), {
 					Size = UDim2.new(1, -24, 0, 26),
 					Position = UDim2.new(0, 12, 0, 30),
 					BackgroundTransparency = 0.9
@@ -1094,7 +1094,7 @@ function OrionLib:MakeWindow(WindowConfig)
 				}), "Second")
 
 				SliderBar.InputBegan:Connect(function(Input)
-					if Input.UserInputType == Enum.UserInputType.MouseButton1 then 
+					if Input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then 
 						Dragging = true 
 					end 
 				end)
@@ -1105,12 +1105,13 @@ function OrionLib:MakeWindow(WindowConfig)
 				end)
 
 				UserInputService.InputChanged:Connect(function(Input)
-					if Dragging and Input.UserInputType == Enum.UserInputType.MouseMovement then 
+					if Dragging and (Input.UserInputType == Enum.UserInputType.MouseMovement or Input.UserInputType == Enum.UserInputType.Touch) then
 						local SizeScale = math.clamp((Input.Position.X - SliderBar.AbsolutePosition.X) / SliderBar.AbsoluteSize.X, 0, 1)
-						Slider:Set(SliderConfig.Min + ((SliderConfig.Max - SliderConfig.Min) * SizeScale)) 
+						Slider:Set(SliderConfig.Min + ((SliderConfig.Max - SliderConfig.Min) * SizeScale))
 						SaveCfg(game.GameId)
 					end
 				end)
+				
 
 				function Slider:Set(Value)
 					self.Value = math.clamp(Round(Value, SliderConfig.Increment), SliderConfig.Min, SliderConfig.Max)
