@@ -651,7 +651,7 @@ function OrionLib:MakeWindow(WindowConfig)
 
 	AddConnection(CloseBtn.MouseButton1Up, function()
 		MainWindow.Visible = false
-        ToggleButton.Text = "Ui is closed"
+        ToggleButton.Text = "Open Ui"
 		UIHidden = true
 		OrionLib:MakeNotification({
 			Name = "Interface Hidden",
@@ -673,9 +673,9 @@ function OrionLib:MakeWindow(WindowConfig)
 	-- Set size, position, and appearance
 	ToggleButton.Size = UDim2.new(0, 65, 0, 21)
 	ToggleButton.Position = UDim2.new(0.5, 0, -0.1, 0)
-	ToggleButton.Text = "Ui is opend"
+	ToggleButton.Text = "Close Ui"
 	ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-	ToggleButton.Draggable = true
+	--ToggleButton.Draggable = true
 	ToggleButton.Active = true
 	ToggleButton.BackgroundColor3 = Color3.fromRGB(59, 59, 59) -- Darker background color
 	ToggleButton.Transparency = 0.4
@@ -685,12 +685,13 @@ function OrionLib:MakeWindow(WindowConfig)
 	UICorner.Parent = ToggleButton
 	UICorner.CornerRadius = UDim.new(0, 10)
 
+	MakeDraggable(DragPoint, ToggleButton)
     ToggleButton.MouseButton1Click:Connect(function()
         if UIHidden then
-			ToggleButton.Text = "Ui is opend"
+			ToggleButton.Text = "Close Ui"
             MainWindow.Visible = true
         else
-			ToggleButton.Text = "Ui is closed"
+			ToggleButton.Text = "Open Ui"
             MainWindow.Visible = false
         end
         UIHidden = not UIHidden
