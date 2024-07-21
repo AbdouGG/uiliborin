@@ -679,7 +679,7 @@ function OrionLib:MakeWindow(WindowConfig)
 	ToggleButton.Active = true
 	ToggleButton.BackgroundColor3 = Color3.fromRGB(59, 59, 59) -- Darker background color
 	ToggleButton.Transparency = 0.4
-	ToggleButton.ZIndex = 1
+	ToggleButton.ZIndex = 10
 
 	-- Make the button circular
 	UICorner.Parent = ToggleButton
