@@ -648,7 +648,6 @@ function OrionLib:MakeWindow(WindowConfig)
 	local ScreenGui = Instance.new("ScreenGui")
 	local ToggleButton = Instance.new("TextButton")
 	local UICorner = Instance.new("UICorner")
-	local coreGui = game:GetService("CoreGui")
 
 	AddConnection(CloseBtn.MouseButton1Up, function()
 		MainWindow.Visible = false
@@ -668,7 +667,7 @@ function OrionLib:MakeWindow(WindowConfig)
 		end
 	end)
 
-    ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui") or coreGui
+    ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 	ToggleButton.Parent = ScreenGui
 
 	-- Set size, position, and appearance
